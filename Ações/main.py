@@ -34,10 +34,18 @@ for acao in acoes:
         roe = spans[7].text.strip() if len(spans) > 7 else 'ROE não encontrado'
     else:
         pl = pvp = dy = roe = 'Indicador não encontrado'
+        
+    #print('\n\n\n')
+    #print(f"Empresa: {nome_company}")
+    #print(f"P/L: {pl}")
+    #print(f"P/VP: {pvp}")
+    #print(f"DY: {dy}")
+    #print(f"ROE: {roe}")
+    # Adicionar os dados da ação à lista
+    lista_acao.append([nome_company, pl, pvp, dy, roe])
 
-    print('\n\n\n')
-    print(f"Empresa: {nome_company}")
-    print(f"P/L: {pl}")
-    print(f"P/VP: {pvp}")
-    print(f"DY: {dy}")
-    print(f"ROE: {roe}")
+acoes = pd.DataFrame(lista_acao, columns=['Empresa','P/L','P/VP','DY','ROE'])
+
+acoes.to_excel('acoes.xlsx', index=False)
+    
+print(acoes)
