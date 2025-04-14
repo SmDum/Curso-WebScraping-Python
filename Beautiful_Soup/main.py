@@ -5,6 +5,10 @@ response = requests.get('https://g1.globo.com/')
 content = response.content
 site = BeautifulSoup(content, 'html.parser')
 
-noticia = site.find('div', attrs={'class':'bstn-hl-wrapper'})
+#HTML da Notícia
+noticia = site.find('div', attrs={'class':'feed-post bstn-item-shape type-materia'})
 
-print(noticia.prettify())
+#Título da Notícia
+titulo = noticia.find ('a', attrs={'class':'feed-post-link'})
+
+print(titulo.text)
