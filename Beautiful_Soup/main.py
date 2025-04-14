@@ -11,4 +11,9 @@ noticia = site.find('div', attrs={'class':'feed-post bstn-item-shape type-materi
 #Título da Notícia
 titulo = noticia.find ('a', attrs={'class':'feed-post-link'})
 
+#Subtitulo da Notícia
+subtitulo = noticia.find('a', attrs={'class':'gui-color-primary gui-color-hover feed-post-body-title bstn-relatedtext'})
+
+print(noticia.prettify())
 print(titulo.text)
+print(subtitulo.text)
