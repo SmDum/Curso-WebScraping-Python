@@ -13,8 +13,7 @@ navegador.get("https://www.trivago.com.br")
 
 sleep(5)
 
-#input_place = navegador.find_element(By.CLASS_NAME, 'dJVPMU SwVR4I')
-input_place = navegador.find_element(By.CSS_SELECTOR, 'button > span > span > svg > g')
+input_place = navegador.find_elements(By.TAG_NAME, 'button')[3]
 input_place.send_keys("Foz do Iguaçu")
 input_place.submit()
 
