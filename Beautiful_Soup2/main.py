@@ -32,8 +32,3 @@ news = pd.DataFrame(lista_noticias, columns=['Título','Subtítulo','Link'])
 news.to_csv('noticias.xlsx', index=False)
         
 #print(news)
-   
-
-
-
-    
